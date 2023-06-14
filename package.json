@@ -1,6 +1,7 @@
 {
   "name": "react-markdown-previewer",
   "version": "0.1.0",
+  "homepage": "https://jake-a-brown.github.io/MarkdownPreviewer",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
