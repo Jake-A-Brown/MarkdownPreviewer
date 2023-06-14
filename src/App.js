@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
+import Editor from './Editor';
 import './App.css';
+import { useState } from 'react';
+import Previewer from './Previewer';
+import defaultContent from './defaultContent';
 
-function App() {
+
+const App = () => {
+  const [content, setContent] = useState(defaultContent);
+
+  const handleTextareaChange = (event) => {
+    setContent(event.target.value);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <Editor content={content} handleTextareaChange={handleTextareaChange} />
+      <Previewer content={content} />
     </div>
   );
-}
+};
 
 export default App;
